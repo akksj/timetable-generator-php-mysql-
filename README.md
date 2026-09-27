@@ -1,138 +1,44 @@
-# 📅 Online Time Table Generator (PHP & MySQL)
+# College Timetable Generator
 
-## 📌 Project Description
+PHP + MySQL tool that builds a clash-aware class timetable so a college does not spend a weekend dragging subjects around a spreadsheet.
 
-This project is a **web-based timetable generator** developed using **PHP and MySQL**. It helps schools or colleges automatically create and manage class schedules.
+It checks that a teacher and a room are not booked twice in the same slot.
 
-The system reduces manual work and avoids conflicts between teachers, subjects, and time slots.
+## Who it is for
 
----
+Department admins who currently maintain timetables in Excel, plus students and teachers who only need to *view* their grid.
 
-## 🚀 Features
+## Features
 
-* Admin login system
-* Add/Edit/Delete:
+- Admin login
+- Departments, teachers, students, subjects
+- Automatic generation with basic clash checks
+- Separate views for student and teacher
 
-  * Departments
-  * Teachers
-  * Students
-  * Subjects
-* Automatic timetable generation
-* View timetable for:
+## Stack
 
-  * Students
-  * Teachers
-* Conflict management (basic)
+HTML, CSS, JavaScript, Bootstrap, PHP, MySQL
 
----
+## Run locally
 
-## 👥 User Roles
+1. Start Apache + MySQL in XAMPP / WAMP
+2. Copy this folder into `htdocs`
+3. Create a MySQL database named `notebook`
+4. Import `notebook.sql` in phpMyAdmin if you have the dump
+5. Open `http://localhost/<folder-name>/`
 
-### 🔐 Admin
+Default admin: `admin` / `admin` — change this before any real deployment. Passwords in this version are not hashed.
 
-* Manage all data
-* Generate timetable
+## Honest limitations
 
-### 👨‍🏫 Teacher
+- Scheduling algorithm is basic
+- Passwords are stored in plain form
+- SQL dump is not always committed with the PHP files
 
-* View assigned schedule
+## Next version
 
-### 🎓 Student
+A MERN rewrite is planned so the same product can use JWT roles, a proper constraint solver, and a React grid UI. Until then this repo is the working PHP prototype.
 
-* Register and view timetable
+## Author
 
----
-
-## 🛠️ Technologies Used
-
-### Frontend:
-
-* HTML
-* CSS
-* JavaScript
-* Bootstrap
-
-### Backend:
-
-* PHP
-
-### Database:
-
-* MySQL
-
----
-
-## 💻 Software Requirements
-
-* XAMPP / WAMP / MAMP
-* Web Browser (Chrome, Edge, etc.)
-
----
-
-## ⚙️ Installation Steps
-
-1. Install XAMPP/WAMP
-2. Start **Apache** and **MySQL**
-3. Copy project folder to:
-
-   * `htdocs` (XAMPP)
-4. Open phpMyAdmin:
-
-   * `http://localhost/phpmyadmin`
-5. Create database:
-
-   * `notebook`
-6. Import:
-
-   * `notebook.sql`
-7. Run project:
-
-   * `http://localhost/project-folder-name/`
-
----
-
-## 🔑 Default Login
-
-**Admin:**
-
-* Username: `admin`
-* Password: `admin`
-
----
-
-## 📂 Project Structure
-
-* `/admin` → Admin panel
-* `/student` → Student dashboard
-* `/teacher` → Teacher dashboard
-* `/db` → Database file
-* `/css` → Styles
-* `/js` → Scripts
-
----
-
-## ⚠️ Limitations
-
-* Basic scheduling algorithm
-* No advanced conflict resolution
-* Passwords are not encrypted
-
----
-
-## 🔮 Future Improvements
-
-* Add AI-based scheduling
-* Secure password hashing
-* Mobile-friendly UI
-* Notification system
-
----
-
-## 👨‍💻 Author
-
-* Sarthak
-
-
-
-This project is for educational purposes only.
-
+Sarthak Giri · [github.com/akksj](https://github.com/akksj)
