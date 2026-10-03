@@ -1,10 +1,9 @@
 <strong><option value="" selected="selected" disabled="disabled">Select Semester</option>
-<?php 
+<?php
 include('config.php');
-$q=mysqli_query($con,"select * from  department where department_id='".$_GET['id']."'");
-while($res=mysqli_fetch_assoc($q))
-{
-echo "<option value='".$res['department_id']."'>".$res['department_name']."</option>";
-				
+$id = intval($_GET['id'] ?? 0);
+$q = mysqli_query($con, "select * from department where department_id=" . $id);
+while ($res = mysqli_fetch_assoc($q)) {
+    echo "<option value='" . intval($res['department_id']) . "'>" . htmlspecialchars($res['department_name']) . "</option>";
 }
 ?>
