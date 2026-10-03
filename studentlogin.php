@@ -13,8 +13,10 @@ if(isset($save))
 	else
 	{
 	//check login crenditial
-	$que=mysql_query("select * from admin where user_name='".$e."' and password='".$p."'");
-	$r=mysql_num_rows($que);
+	$safeUser = mysqli_real_escape_string($con, $e);
+	$safePass = mysqli_real_escape_string($con, $p);
+	$que=mysqli_query($con, "select * from admin where user_name='".$safeUser."' and password='".$safePass."'");
+	$r=$que ? mysqli_num_rows($que) : 0;
 		if($r)
 		{
 			$_SESSION['admin']=$e;
