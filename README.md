@@ -2,24 +2,23 @@
 
 PHP and MySQL prototype that builds a class grid and checks that a teacher or room is not booked twice.
 
-This repo is the working prototype, not the planned MERN rewrite. Staff and student login pages linked from `index.php` are not in this folder.
-
 ## Run
 
 1. Start Apache and MySQL in XAMPP or WAMP
 2. Copy this folder into `htdocs`
-3. Create a MySQL database named `timetable` (this matches `config.php`)
-4. Import `notebook.sql` if you have the dump. The dump is not in this repo.
-5. Open `http://localhost/<folder-name>/`
+3. Import `timetable.sql` in phpMyAdmin. It creates the `timetable` database used by `config.php`
+4. Open `http://localhost/<folder-name>/`
 
-Default admin is `admin` / `admin`. Passwords are stored in plain text. Do not deploy this as-is.
+Default admin is `admin` / `admin` on `studentlogin.php`. Passwords are still plain text. Do not deploy this as-is.
+
+`admindashboard.php` only confirms the login. The old staff and student timetable folders are not in this repo.
 
 ## Honest limits
 
 - Scheduling is a basic clash check, not a constraint solver
-- `course_ajax.php` and `semester_ajax.php` now cast the id to an integer
-- `config.php` uses `mysqli` and no longer calls the removed `mysql_error()`
-- SQL dump is missing
+- Ajax ids are cast to integers
+- `config.php` uses `mysqli`
+- Admin login no longer calls the removed `mysql_query()`
 
 ## Author
 
